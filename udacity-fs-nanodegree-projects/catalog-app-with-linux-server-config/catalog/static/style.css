@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.clearfix:after { 
+   content: "."; 
+   visibility: hidden; 
+   display: block; 
+   height: 0; 
+   clear: both;
+}
+
+html{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato','Arial','sans-serif';
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility; 
+}
+
+section{
+    padding: 80px 0;
+    
+    
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0, auto;
+    background-color: #efecec;
+}
+
+.col{
+    display: block;
+    float: left;
+    margin: 1% 0px 1% 1.6%;
+}
+
+header{
+    background-color: #35354b;
+    background-size: cover;
+    background-position: center;
+    height: 10vh;
+    max-width: 1140px;
+}
+
+.header-box{
+    position: absolute;
+    width: 1140px;
+    top: 1.5%;
+    left: 3%;
+    
+    
+    color: #fff;
+    margin: 0 2.5%;
+      
+}
+
+
+.header-box ul li{
+    
+}
+
+.app-title{
+   float: left;
+   
+}
+
+
+.user{
+    color: #fff;
+    font-size: 80%;
+    float: right;
+    margin-top: 1%;
+    
+    
+}
+
+.btn-logout, .btn-login{
+    float: right;
+    margin-left: 5%;
+    margin-right: 10%;
+    
+}
+
+h1{
+    
+    margin: 0;
+    color: #fff;
+    font-size: 150%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    white-space: 3px;
+}
+
+li{
+    display: list-item;
+    list-style-type: none;
+}
+.btn-login:link, .btn-login:visited, .btn-logout:link, .btn-logout:visited, .cancel-button:link, .cancel-button:visited, add-input-button:link, add-input-button:visited, .rename-button:link, .rename-button:visited, input[type=submit]{
+    
+    
+    padding: 5px 20px;
+    background-color: #c0392b;
+    
+    font-weight: 300;
+    text-decoration: none;
+    
+    color: #fff;
+    
+}
+
+.cancel-button{
+    margin-right: 30%;
+}
+
+
+}
+
+.btn-login:hover, .btn-login:active, .btn-logout:hover, .btn-logout:active,.btn-add:hover, .btn-add:active, .cancel-button:hover, cancel-button:active, add-input-button:hover, add-input-button:active, .rename-button:hover, .rename-button:active,input[type=submit]{
+    background-color: #88291f;
+}
+
+.vertical-line{
+    border-left: 1px solid #ff0000;
+}
+
+.category-list-section, .section-add-category, .section-items, .section-new-item, .section-edit-item, .section-item-delete, .section-login{
+    background-color: #efecec;
+    padding-top: 20px;
+    height: 100vh;
+    width: 1140px;
+}
+
+
+
+.category-box, .latest-items-box, .item-box, .edit-item-div, .delete-item-div, .login-div{
+    background-color: #fff;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.category-list-box, .latest-item-list-box{
+    padding: 2.5%;
+}
+
+.category-box ul li{
+    padding: 0.5%;
+}
+
+.add-category-button, .category-title-div, .latest-item-title, .add-new-title, .add-button, .cancel-submit-button-li, .category-title, .title-div, .login-title-div{
+    background-color: #5f5f87;
+    padding: 2% 2%;
+    
+    
+}
+
+.login-title-div p, .category-title-div p, .latest-item-title p, .add-new-title p, .item-category-name, .title{
+    color: #fff;
+    font-size: 120%;
+    font-weight: 400;
+}
+
+.sign-in-button{
+    margin: 2.5% 1%;
+}
+.btn-add, .yes-button, no-button, input[type=submit]{
+    margin: 0% 5%;
+    display: inline-block;
+    padding: 5px 25px;
+    background-color: #c0392b;
+    
+    font-weight: 300;
+    text-decoration: none;
+    
+    color: #fff;
+}
+
+.btn-add, .btn-login{
+    float: right;
+}
+
+.name-input{
+   width: 70%; 
+}
+
+.add-new-category, .new-item-div, .edit-item-div{
+    background-color: #fff;
+    width: 90%;
+    margin: 5% 5%;
+    
+    
+}
+
+.add-new-category form ul, .new-item-div form ul, .edit-item-div form ul{
+    padding: 0;
+    margin: 0;    
+}
+
+.add-new-category form li, .new-item-div form li, .edit-item-div form li{
+    padding: 2.5% 1.5%; 
+   
+}
+
+.add-new-category form li textarea{
+    padding: auto 1.5%; 
+   
+}
+
+.add-new-category form label, .new-item-div form label, .edit-item-div form label{
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+
+
+.add-new-category form .add-input-button, .add-new-category form .add-cancel-button, .rename-button, .cancel-button{
+    
+    display: inline-block;
+    float: right;
+   
+}
+
+
+.new-button{
+    display: inline-block;
+    float: right;
+    margin-bottom: 1%;
+  
+}
+
+.item-description {
+    
+    margin-left: 1.5%;
+    
+}
+
+.item-description li{
+    
+    padding: 2% 2%; 
+    margin: 1% 1%;
+   
+}
+
+.item-description li a{
+    display: inline-block;
+   
+}
+
+.item-description li .item-name{
+    color: #fff;
+    font-size: 120%;
+    font-weight: 400;
+    background-color: #9a9ab4;
+    padding: 1% 1%;
+}
+
+.item-description li .item-description-text{
+    background-color: #fff;
+    margin: auto 0;
+    border-left: 1px solid #c4c3c3;
+    border-right: 1px solid #c4c3c3;
+    border-bottom: 1px solid #848484;
+}
+
+.item-description li .description{
+    padding: 1% 1%;
+}
+
+.item-box a{
+    
+    margin: 1.5% 5%;
+    display: inline-block;
+    padding: 5px 25px;
+    background-color: #dc6f64;
+    
+    font-weight: 300;
+    text-decoration: none;
+    
+    color: #fff;
+    
+}
+
+.message{
+    font-weight: 400;
+    
+    padding: 1% 2.5%;
+}
+
+.delete-button{
+    display: inline-block;
+    float: right;
+    padding: 1% 1%;
+}
+
+.login-div{
+    margin: 50vh 50vh;
+}
+
+.latest-item-list-box ul li span{
+    color: #9f9898;
+    font-style: italic;
+    
+}
+
+.logout-and-user{
+    float: right;
+}
+        
+        

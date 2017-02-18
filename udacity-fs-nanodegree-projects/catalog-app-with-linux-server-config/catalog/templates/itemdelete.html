@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link href="{{url_for('static', filename='normalize.css')}}" rel="stylesheet" type= "text/css" >
+        <link href="{{url_for('static', filename='grid.css')}}" rel=stylesheet type="text/css">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" >
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    
+    </head>
+    
+    <body>
+        
+        <header>
+            <div class="header-box clearfix">
+                <ul>
+                    <li>
+                        <h1 class="app-title">Catalog App</h1>
+                    
+                        <a class="btn-logout" href="{{url_for('gdisconnect')}}">Logout</a> 
+                    
+                        <p class="user">{{user}}</p>
+                
+                    </li>
+                    
+                </ul>
+                
+        
+            </div>
+        </header>
+        
+        <section class="section-item-delete">
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <div class="delete-item-div">
+                        
+                        <p class="message">Are you sure you want to delete the item {{i.name}}?</p></br></br>
+        
+                        <form action="{{url_for('delete_category_item', category_id = category_id, item_id = i.id)}}" method="post">
+                            <ul>
+                                <li>
+                                    
+                                     <input class="yes-button" type="submit" value="Yes" style="border-style: none;">
+                                    <a class="cancel-button" href="{{url_for('category_item', category_id = category_id )}}">No</a>
+                                    
+                                    <div style="clear:both;"></div>   
+                                </li>
+                            
+                            </ul>
+                            
+                        </form>
+            
+                    
+                    
+                    </div>
+                
+                </div>
+                
+            </div>
+        
+        </section>
+        
+        
+    
+    
+    
+    </body>
+
+
+</html>

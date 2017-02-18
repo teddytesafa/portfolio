@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        
+        <link href="{{url_for('static', filename='normalize.css')}}" rel="stylesheet" type= "text/css" >
+        <link href="{{url_for('static', filename='grid.css')}}" rel=stylesheet type="text/css">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" >
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    
+    </head>
+    <body>
+        <header>
+            <div class="header-box">
+                <h1>Catalog App</h1>
+            </div>
+        
+        </header>
+        
+        <section class="section-login">
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <div class="login-div">
+                        <div class="login-title-div">
+                            <p>Login</p>
+                        </div>
+                        <div class="sign-in-button">
+                        <div id="signInButton">
+                          <span class="g-signin"
+                            data-scope="openid email"
+                            data-clientid="786111295710-fq9dos4e73a3dskjimmguhblcm5i9qh6.apps.googleusercontent.com"
+                            data-redirecturi="postmessage"
+                            data-accesstype="offline"
+                            data-cookiepolicy="single_host_origin"
+                            data-callback="signInCallback"
+                            data-approvalprompt="force">
+                          </span>
+                        </div>
+                        </div>
+                        
+                        <div class="result"></div>
+                       
+                        
+                        </div>
+                        
+                        <script>
+                            function signInCallback(authResult){
+                                if (authResult['code']){
+                                    
+                                    $('#signInButton').attr('style', 'display: none');
+                                    $.ajax({
+                                              type: 'POST',
+                                              url: '/gconnect?state={{session['state']}}',
+                                              processData: false,
+                                              data: authResult['code'],
+                                              contentType: 'application/octet-stream; charset=utf-8',
+                                              success: function(result) {
+                                                // Handle or verify the server response if necessary.
+                                                if (result) {
+                                                  $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
+                                                  setTimeout(function() {
+                                                  window.location.href = "/categories";
+                                                 }, 2000);
+
+                                      } else if (authResult['error']) {
+                                    console.log('There was an error: ' + authResult['error']);
+                                  } else {
+                                        $('#result').html('Failed to make a server-side call. Check your configuration and console.');
+                                         }
+                                      }
+
+                                  }); 
+                                } 
+                            }
+                             
+                        
+                        </script>
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                
+                
+                </div>
+            
+            </div>
+        
+        </section>
+    
+    </body>
+
+</html>

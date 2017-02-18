@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='normalize.css')}}" rel="stylesheet" type= "text/css" >
+        <link href="{{url_for('static', filename='grid.css')}}" rel=stylesheet type="text/css">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" >
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    
+    </head>
+    
+    <body>
+        <header>
+            <div class="header-box clearfix">
+                <ul>
+                    <li>
+                        <h1 class="app-title">Catalog App</h1>
+                    
+                        <a class="btn-logout" href="{{url_for('gdisconnect')}}">Logout</a> 
+                    
+                        <p class="user">{{user}}</p>
+                
+                    </li>
+                    
+                </ul>
+                
+        
+            </div>
+        </header>
+        
+        <section class="category-list-section">
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <div class="category-box">
+                        <div class="category-title-div">
+                            <p>Categories</p>
+                        </div>
+                        
+                        <div class="category-list-box">
+                            <ul>
+                                {% for category in categories %}
+                                <li><a href="{{url_for('category_item', category_id = category.id)}}" style="text-decoration:none">{{category.name}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                            <div class="add-category-button" >
+                                
+                                <a class="btn-add" href="{{url_for('add_new_category')}}" style="text-decoration: none">Add</a>
+                                <div style="clear: both;"></div>
+                            </div>
+                            
+                        
+                        </div>
+                         
+                    </div>
+                    
+
+                <div class="col span-1-of-2">
+                    <div class="latest-items-box">
+                        <div class="latest-item-title">
+                            <p>Latest Items</p>
+                        </div>
+                        <div class="latest-item-list-box">
+                            <ul>
+                                {% for i in latest %}
+                                
+                                
+                                <li>
+                                {{i[0].name}}<span>({{i[1].name}})</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        
+                        </div>
+                        
+                        
+                        
+                    </div>
+                    
+                </div>
+            
+            </div>
+            
+            
+        
+            
+        
+        </section>
+        
+    </body>
+
+
+</html>

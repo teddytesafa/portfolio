@@ -1,0 +1,12 @@
+**What additional properties did you add to your models and why?
+
+The additional properties I used are attempts_remaining and number_of_correct. I used attempts_remaining to hold the total number of remaining attempts. This corresponds to one of the 7 Hangman pictures which will sequentially be shown after missing.
+I used the number_of_correct to make it easy to identify whether the game is over by winning or losing. If the number of correct matches the number of letters in the word, then it is a win otherwise it is a loss.
+
+
+
+**What were some of the trade-offs or struggles you faced when implementing the new game logic?
+
+- Data type transformation between ndb model and messages model.
+- Storing history without actually initializing with [‘’] was a challenge.
+- Earlier forms of the game are created in datastore and affected how the get_score and other end points

@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <link href="{{url_for('static', filename='normalize.css')}}" rel="stylesheet" type= "text/css" >
+        <link href="{{url_for('static', filename='grid.css')}}" rel=stylesheet type="text/css">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" >
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    
+    </head>
+    
+    <body>
+        
+        <header>
+           <div class="header-box clearfix">
+                <ul>
+                    <li>
+                        <h1 class="app-title">Catalog App</h1>
+                    
+                        <a class="btn-logout" href="{{url_for('gdisconnect')}}">Logout</a> 
+                    
+                        <p class="user">{{user}}</p>
+                
+                    </li>
+                    
+                </ul>
+                
+        
+            </div>
+        </header>
+        <section class="section-new-item">
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <div class="new-item-div">
+                        <div class="title-div">
+                            <p class="title">New {{category.name}} Item</p>
+                        </div>
+                        
+                        <form action="{{url_for('new_category_item', category_id = category_id)}}" method="post">
+                                <ul>
+                                    <li>
+                                        <label for="name">Name:</label>
+                                        <input type="text" name= "name" placeholder="Item name.">
+                                    </li>
+                                    
+                                    <li>
+                                        <label for="description">Description:</label>
+                                        <textarea name="description" rows="10" placeholder="Description..."></textarea>
+                                    </li>
+                                
+                                </ul>
+                                
+                                <ul>
+                                    <li class="add-button">
+                                        
+                                        <a class="cancel-button" href="{{url_for('category_item', category_id = category_id)}}">Cancel</a>
+                                        <input class="add-input-button" type="submit" value="Add" style="border-style: none;">
+                                        <div style="clear:both;"></div>
+                                    </li>
+                                
+                                </ul>
+                               
+                              
+                            
+                                
+                                
+
+                            </form>
+                
+            
+                        
+                
+                </div>
+                
+                
+                </div>
+                
+                
+            
+            </div>
+        
+        </section>
+        
+    
+    </body>
+</html>

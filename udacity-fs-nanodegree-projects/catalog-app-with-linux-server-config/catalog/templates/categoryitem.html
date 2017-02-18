@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <link href="{{url_for('static', filename='normalize.css')}}" rel="stylesheet" type= "text/css" >
+        <link href="{{url_for('static', filename='grid.css')}}" rel=stylesheet type="text/css">
+        
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" >
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    
+    </head>
+    <body>
+        <header>
+            <div class="header-box clearfix">
+                <ul>
+                    <li>
+                        <h1 class="app-title">Catalog App</h1>
+                    
+                        <a class="btn-logout" href="{{url_for('gdisconnect')}}">Logout</a> 
+                    
+                        <p class="user">{{user}}</p>
+                
+                    </li>
+                    
+                </ul>
+                
+        
+            </div>
+        </header>
+        <section class="section-items">
+            <div class="row">
+                <div class="item-box">
+                    <div class="category-title">
+                        <p class="item-category-name">{{ category.name }}</p>
+                    </div>
+        
+              {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        
+          <ul>
+              {% for message in messages%}
+                <li>
+                    <strong>{{message}}</strong>
+                </li>
+              {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+        
+        <a href="{{url_for('new_category_item', category_id = category.id)}}"> Add New</i> </a>
+                    <ul class="item-description">
+                        
+                        {% for i in items %}
+        
+                        <li>
+                            <div class="item-description-text">
+                            <p class="item-name">{{i.name}}</p>
+                            </br>
+                            
+                                
+                                <p class="description">{{i.description}}</p>
+                                </br>
+
+                                <a href="{{url_for('edit_category_item', category_id = category.id, item_id = i.id)}}">Edit</a>
+
+                                <a href="{{url_for('delete_category_item', category_id = category.id, item_id = i.id)}}">Delete</a>
+                        {% endfor %}
+                          
+                            </div>
+                             
+               
+                
+                        
+                        </li>
+            
+                        
+                    
+                    </div>
+        
+                
+                </div>
+            
+            </div>
+        
+        </section>
+        
+    </body>
+</html>

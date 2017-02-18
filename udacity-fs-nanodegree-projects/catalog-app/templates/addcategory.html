@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="{{url_for('static', filename='normalize.css')}}" rel="stylesheet" type= "text/css" >
+        <link href="{{url_for('static', filename='grid.css')}}" rel=stylesheet type="text/css">
+        <link href="{{url_for('static', filename='style.css')}}" rel="stylesheet" type="text/css" >
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+    </head>
+    
+    <body>
+        
+        <header>
+            <div class="header-box clearfix">
+                <ul>
+                    <li>
+                        <h1 class="app-title">Catalog App</h1>
+                    
+                        <a class="btn-logout" href="{{url_for('gdisconnect')}}">Logout</a> 
+                    
+                        <p class="user">{{user}}</p>
+                
+                    </li>
+                    
+                </ul>
+                
+        
+            </div>
+        </header>
+        
+        <section class="section-add-category">
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <div class="add-new-category">
+                        <div class="add-new-title">
+                            <p>Create New Category</p>
+                        </div>
+                        
+                        <div class="add-new-category-form">
+                            <form action="{{url_for('add_new_category')}}" method="post">
+                <ul>
+                    <li><label for="name">Name:</label>
+                        <input class="name-input" type="text" size="30" name="name"></li>
+                    <div style="clear:both;"></div>
+                    <li>
+                        <input class="new-button" type="submit" value="Submit" style="border-style: none;">
+                        <div style="clear:both;"></div>
+                    </li>
+                
+                </ul>
+            </form>
+                            
+                            
+                        </div>
+                    
+                    </div>
+                    
+                    
+                </div>
+            
+            </div>
+        </section>
+    
+    
+    
+    
+    </body>
+
+</html>
