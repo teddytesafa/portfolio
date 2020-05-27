@@ -1,21 +1,15 @@
 version: 2.1
-
-orbs:
-  python: circleci/python@0.2.1
-
 jobs:
   build-and-test:
-    executor: python/default
+    docker:
+      - image: circleci/python:2.7.18
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
-          command: ./manage.py test
-          name: Test
+      - run: echo "Hello there. First circleci pipeline."
+      - run: sleep 25
 
 workflows:
-  main:
+  version: 2.1
+  build-and-test:
     jobs:
       - build-and-test
